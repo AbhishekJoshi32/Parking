@@ -2,6 +2,12 @@
 session_start();
 include 'header.php';
 include 'connect.php';
+if(!isset($_SESSION['signed_in']) || !$_SESSION['signed_in'])
+{
+	echo 'You are not signed in. Please <a href="login.php">sign in</a> to continue.';
+}
+else
+{
 $pid=$_GET['id'];
 $sql="SELECT location from parking_area WHERE p_id='".$pid."'";
 $result=mysql_query($sql);
@@ -69,6 +75,7 @@ else
 		echo "Parking successfully booked";
 		echo "Cost=".$cost;
 	}
+}
 }
 include 'footer.php';
 ?>

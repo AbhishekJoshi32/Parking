@@ -28,19 +28,25 @@ else
 	<td>Password:</td>
 	<td><input type="password" name="pass" placeholder="password"></td>
 	</tr>
-	<tr>
-	<td></td>	
-	<td><input type="submit" name="submit" value="Login"></td>
-	</tr>
+	<tr>	
+	<td><input type="submit" name="action" value="Forgot Password"></td>
+    <td align="right"><input type="submit" name="action" value="Sign in"></td>
+    </tr>
 	<tr>
 	<td colspan="2">
-	Don\'t have an account? <a href="" id="signup">click here</a>
+	Don\'t have an account? <a href="signup.html" id="signup">click here</a>
 	</td>
 	</tr>
 	</table>  
 	</form>  
 	</center>
 	</div>';
+    }
+    elseif($_POST['action']!='Sign in')
+    {
+        $_SESSION['user_name']=$_POST['user'];
+        include 'password.php';
+
     }
     else
         {
@@ -50,13 +56,13 @@ else
 	    }
             $sql = "SELECT 
                         username,
-                        password,
+                        password
                     FROM
                         customer_det
                     WHERE
                         username = '" . mysql_real_escape_string($_POST['user']) . "'
                     AND
-                        password = '" . sha1($_POST['pass']) . "'";
+                        password = '" . $_POST['pass'] . "'";
                          
             $result = mysql_query($sql);
             if(!$result)
@@ -75,12 +81,10 @@ else
                      
                     while($row = mysql_fetch_array($result))
                     {
-                        $_SESSION['cust_id']    = $row['cust_id'];
                         $_SESSION['user_name']  = $row['username'];
-     //                   $_SESSION['user_level'] = $row['user_level'];
                     }
                      
-                    echo '<meta http-equiv="refresh" content="0;URL=index.html"';
+                    echo '<meta http-equiv="refresh" content="0;URL=index.php"';
                 }
            }
       }
