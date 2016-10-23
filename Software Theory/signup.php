@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
 include 'header.php';
 include 'connect.php';
-
-=======
 
 include 'connection.php';
 
@@ -30,6 +27,8 @@ if(isset($_POST['submit'])){
 		}
 	}
 }
+else{
+	echo 'not';
+}
 
 ?>
->>>>>>> 98103db41d6decb6ba5ff35add62ca6faf9b3f64
