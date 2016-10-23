@@ -20,7 +20,6 @@ else
 			<th>Location</th>
 			<th>Total Slots</th>
 			<th>Vacant Slots</th>
-			<th>Slots</th>
 			<th></th> ';
 		while($row=mysql_fetch_array($result))
 		{
@@ -28,14 +27,8 @@ else
 				<td>'.$row['total_slots'].'</td>
 				<td>'.$row['vacant_slots'].'</td>
 				<td><form method="post" action="book.php">
-				<input type="hidden" value="'.$row['p_id'].'">
-				<select name="slots">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				</select></td>
-				<td><input type="submit" value="Book Parking"></td></tr>
-				</form>';
+				<a href="book.php?id='.$row['p_id'].'">Book Parking</a>
+				</td></tr>';
 		}
 		echo '</table>';
 	}
