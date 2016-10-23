@@ -35,36 +35,3 @@ PARKTEL
       <a class="item" href="login.html">Login</a>
        <a class="item" href="signup.html">Sign up</a>
 </div>
-
-
-<div class="parallax3">
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<center>
-
-<form action="login.php" method="post">
-<table bgcolor="#E0E0E0" cellpadding="5">
-<tr>
-<td>Username:</td>
-<td><input type="text" name="user" placeholder="Username"></td>
-</tr>
-<tr>
-<td>Password:</td>
-<td><input type="password" name="pass" placeholder="password"></td>
-</tr>
-<tr>
-<td></td>
-<td><input type="submit" name="submit" value="Login"></td>
-</tr>
-<tr>
-<td colspan="2">
-Don't have an account? <a href="" id="signup">click here</a>
-</td>
-</tr>
-</table>  
-</form>  
-</center>
-</div>
-

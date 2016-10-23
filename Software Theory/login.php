@@ -1,8 +1,8 @@
 <?php
 session_start();
+include 'header.php';
 include 'connect.php';
- 
-echo '<h3>Sign in</h3>';
+
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'])
 {
     echo 'You are already signed in, you can <a href="signout.php">sign out</a> if you want.';
@@ -11,44 +11,52 @@ else
 {
     if(!$_POST)
     {
-        echo '<form method="post" action="">
-	<table>
-        <tr> 
-	<td>Username:</td>
-	<td><input type="text" name="user_name" id="name" required placeholder="Username"></td>
-	</tr>
-        <tr>
-	<td>Password:</td>
-	<td><input type="password" name="user_pass" placeholder="Password"></td>
-        <tr>
-	<td><input type="submit" name="action" value="Forgot Password?"</td>
-	<td><input type="submit" name="action" align="right" value="Sign in"></td>
-	</tr>
-        </table>
-	</form>';
-    }
-    elseif($_POST['action']!='Sign in')
-	{
-	    $_SESSION['user_name']=$_POST['user_name'];
-	    include 'password.php';
+	echo '<div class="parallax3">
+	<br><br>
+	<br><br>
+	<br><br>
+	<br><br>
+	<center>
 
-	}
+	<form action="" method="post">
+	<table bgcolor="#E0E0E0" cellpadding="5">
+	<tr>
+	<td>Username:</td>
+	<td><input type="text" name="user" placeholder="Username"></td>
+	</tr>
+	<tr>
+	<td>Password:</td>
+	<td><input type="password" name="pass" placeholder="password"></td>
+	</tr>
+	<tr>
+	<td></td>	
+	<td><input type="submit" name="submit" value="Login"></td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	Don\'t have an account? <a href="" id="signup">click here</a>
+	</td>
+	</tr>
+	</table>  
+	</form>  
+	</center>
+	</div>';
+    }
     else
         {
-	    if(!_POST['user_pass']=="")
+	    if($_POST['pass']=="")
 	    {
 		echo "Please enter your password";
 	    }
             $sql = "SELECT 
-                        user_id,
-                        user_name,
-                        user_level
+                        username,
+                        password,
                     FROM
-                        users
+                        customer_det
                     WHERE
-                        user_name = '" . mysql_real_escape_string($_POST['user_name']) . "'
+                        username = '" . mysql_real_escape_string($_POST['user']) . "'
                     AND
-                        user_pass = '" . sha1($_POST['user_pass']) . "'";
+                        password = '" . sha1($_POST['pass']) . "'";
                          
             $result = mysql_query($sql);
             if(!$result)
@@ -67,12 +75,12 @@ else
                      
                     while($row = mysql_fetch_array($result))
                     {
-                        $_SESSION['user_id']    = $row['user_id'];
-                        $_SESSION['user_name']  = $row['user_name'];
+                        $_SESSION['cust_id']    = $row['cust_id'];
+                        $_SESSION['user_name']  = $row['username'];
      //                   $_SESSION['user_level'] = $row['user_level'];
                     }
                      
-                    echo '<meta http-equiv="refresh" content="0;URL=index.php"';
+                    echo '<meta http-equiv="refresh" content="0;URL=index.html"';
                 }
            }
       }
