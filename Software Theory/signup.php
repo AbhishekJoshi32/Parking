@@ -77,8 +77,9 @@ else
 		{
 	             $_SESSION['signed_in'] = true;
 				 $_SESSION['user_name']  = $user;
-                 echo '<meta http-equiv="refresh" content="0;URL=index.php"';
+                 echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 		}
 	}
 }
+include 'footer.php';
 ?>

@@ -6,7 +6,7 @@ if($_POST['otp']==$_POST['recovery'])
 {
 $sql = "SELECT 
      cus_id, 
-     username, 
+     username 
      FROM
      customer_det WHERE
      username = '".mysql_real_escape_string($_SESSION['user_name'])."'";
@@ -22,11 +22,17 @@ while($row = mysql_fetch_array($result))
 {
 $_SESSION['signed_in'] = true;
 $_SESSION['user_name']=$row['username'];
-$_SESSION['cust_id'] = $row['cus_id'];
 }
+echo 'Welcome, ' . $_SESSION['user_name'] .'<br>';
 
-if($_POST['action'])                   
-echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="index.php">Proceed to home page</a>.';
+
+	echo '<form action="pass.php" method="post">
+	Enter new password: <input type="password" name="pass" placeholder="********" required><br>
+	Re-enter password: <input type="password" name="repass" placeholder="********" required><br>
+	<input type="submit" name="action" value="Change Password">';
+
+
+}                  
 }
 include 'footer.php';
- }
+?>

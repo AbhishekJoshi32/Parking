@@ -22,7 +22,7 @@ else
 		{
 			if(mysql_num_rows($result)==0)
 			{
-				echo "Not bookings done yet";
+				echo "No bookings done yet";
 			}
 			else
 			{

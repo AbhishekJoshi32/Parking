@@ -3,6 +3,39 @@ session_start();
 include 'header.php';
 include 'connect.php';
 
+
+echo '
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar">
+          <li class="cactive"><a href="index.php">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="city.php">Book Parking</a></li>
+          <li><a href="managebooking.php">Manage Bookings</a></li>
+          <li><a href="signup.php">Signup</a></li>
+          <li><a href="login.php">Login</a></li> 
+        </ul>
+        <!--<ul>
+          <li><a href="signout.php"></a>Logout</li>
+          <li><a href="change_pass.php"></a>Change Password</li>
+          <li><a href="#"></a></li>
+        </ul>-->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+<body>';
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'])
 {
     echo 'You are already signed in, you can <a href="signout.php">sign out</a> if you want.';
@@ -12,37 +45,35 @@ else
     if(!$_POST)
     {
 	echo '<div class="parallax3">
-	<br><br>
-	<br><br>
-	<br><br>
-	<br><br>
-	<center>
+<div class="signin">
+  <div class="table">
+    <form action="login.php" method="post">
+      <div class="input-group">
+        <div class="col-md-4">
+           <span>Username</span>
+        </div>
+        <div class="col-md-8">
+           <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="user">
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="col-md-4">
+           <span>Password</span>
+        </div>
+        <div class="col-md-8">
+           <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon1" name="pass">
+        </div>
+      </div>
 
-	<form action="" method="post">
-	<table bgcolor="#E0E0E0" cellpadding="5">
-	<tr>
-	<td>Username:</td>
-	<td><input type="text" name="user" placeholder="Username"></td>
-	</tr>
-	<tr>
-	<td>Password:</td>
-	<td><input type="password" name="pass" placeholder="password"></td>
-	</tr>
-	<tr>	
-	<td><input type="submit" name="action" value="Forgot Password"></td>
-    <td align="right"><input type="submit" name="action" value="Sign in"></td>
-    </tr>
-	<tr>
-	<td colspan="2">
-	Don\'t have an account? <a href="signup.html" id="signup">click here</a>
-	</td>
-	</tr>
-	</table>  
-	</form>  
-	</center>
-	</div>';
+      <div class="submit-btn ">
+        <input class="btn btn-primary" type="submit" name="action" value="LOGIN">
+        <input class="btn btn-primary" type="submit" name="action" value="FORGOT PASSWORD">
+              </div>
+    </form>  
+  </div>
+</div>';
     }
-    elseif($_POST['action']!='Sign in')
+    elseif($_POST['action']!='LOGIN')
     {
         $_SESSION['user_name']=$_POST['user'];
         include 'password.php';
@@ -90,5 +121,4 @@ else
       }
 }      
  
-include 'footer.php';
 ?>
