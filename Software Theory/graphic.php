@@ -43,9 +43,9 @@ left:220px;
 <body>
 
 <div class="abs">
-<canvas id="1" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[1]==0) echo 'class="green"'; else echo'class="red"'?>" >
+<canvas id="1" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[1]==0) echo 'class="green"'; else echo'class="red"'?>" >1
 </canvas>
-<canvas id="2" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[2]==0) echo 'class="green"';?>>
+<canvas id="2" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[2]==0) echo 'class="green"';?>>2
 </canvas>
 <canvas id="3" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[3]==0) echo 'class="green"';?>>
 </canvas>
