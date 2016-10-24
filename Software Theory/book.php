@@ -51,8 +51,13 @@ else
 	{
 		while($row=mysql_fetch_array($result))
 		{
-			echo '<form>
-			Location: <input type="text" name="location" value="'.$row['location'].'" readonly>
+			echo '<form><div class="input-group">
+			      <div class="col-md-3">
+           <span>Location: </span>
+        </div>
+        <div class="col-md-10"> 
+        <input type="text" class="form-control" name="location" value="'.$row['location'].'" readonly>
+        </div></div>
 			</form>';
 		}
 	}
