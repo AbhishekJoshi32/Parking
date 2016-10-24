@@ -7,6 +7,10 @@ body, html {
     src: url("../fonts/Trend Sans W00 Four.ttf");
 }
 
+p{
+    padding: 5px 10px ;
+}
+
 /****header *****/
 
 #top{
@@ -22,13 +26,41 @@ body, html {
     margin-top:39px;
     font-family: headfont, sans-serif;  
     font-style: italic;
-    font-size: 38px;
+    font-size: 40px;
 }
 
 /***** navbar *****/
 .navbar{
-    border-radius:0;
-    height:38px;
+    border:0;
+    margin: 0;
+    background-color: #ffda1f;
+    color: black;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+    float: none;
+    display: table;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    text-transform: uppercase;
+    color: black;
+    border-right: 1px black solid;
+    margin: 15px 0;
+    padding: 0 30px;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #A0A09F;
+
+}
+
+.navbar-inverse .navbar-nav>li:nth-child(6) a{
+        border-right: none;
+}
+
+.navbar-inverse .navbar-nav .cactive a{
+    color: #A0A09F;
 }
 
 /***** navbar end *****/
@@ -56,7 +88,7 @@ body, html {
     background-image: url('1.jpg');
 
     /* Full height */
-    height: 500px;
+    height: 870px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -105,11 +137,27 @@ body, html {
     background-size: cover;
 }
 
+.parallax4_2 {
+    /* The image used */
+    background-image: url('4.jpg');
+
+    /* Full height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+}
+
+
 
 
 .why{
-	margin-top: 40px;
-	margin-bottom: 80px;
+	padding-top: 40px;
+	background-color:#f2f0f0; 
 }
 
 .why .row{
@@ -121,9 +169,31 @@ body, html {
 	margin-bottom: 40px;
 }
 
+.why-head h1{
+    line-height: 0.8em;
+    font-size: 96px;
+    font-weight: bolder;
+    color: #2F2E2E;
+}
+
 .why-cont{
 	text-align: center;
 }
+.why-cont p{
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: bold;
+    color: #A0A09F;
+}
+
+.why-cont:nth-child(3) img{
+    margin-top: 30px;
+}
+
+.why-cont:nth-child(3) p{
+    margin-top: 14px;
+}
+
 .box 
 {
     background-color:yellow;
@@ -188,4 +258,141 @@ body, html {
     font-family: "Comic Sans MS";
     padding: 0px 10px 0px 10px;
     text-decoration: none;
+}
+
+
+.table{
+    font-family: "New Times Roman";
+    background-color: rgb(244, 244, 244);
+}
+
+.signup{
+    position: absolute;
+    top:260px;
+    width: 100%;
+}
+.signin{
+    position: absolute;
+    top:300px;
+    width: 100%;
+}
+
+.table{
+    width: 308px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: black;
+}
+
+.submit-btn{
+    margin-top: 10px; 
+    text-align: center;
+}
+
+form{
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.input-group .col-md-4{
+    padding-left: 0px;
+    padding-top: 5px;
+    width: 96px;
+}
+
+.input-group{
+    padding: 5px 0;
+}
+
+.signin span{
+    font-weight: bold;
+}
+
+
+
+.selectpicker{
+    width:500px;
+    font-size: 28px;
+    border: 5px rgb(208, 209, 255) solid;
+    border-radius: 15px;
+}
+
+.head{
+    margin: 50px 0;
+    text-align: center;
+}
+
+.head h1{
+    font-weight: bold;
+    font-size: 46px;
+    color: #2800ff;
+}
+
+.city{
+    position: absolute;
+    top:250px;
+    color: black;
+    width: 100%;
+}
+
+.city .drop{
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+.row,.row-head{
+    text-align: center;
+    width:80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.row-head{
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 1.2em;
+    clear:both;
+}
+
+
+
+.row-head p{
+    margin-bottom: 30px;
+}
+
+.row:nth-child(odd){
+    background-color: #c5c5c5;
+}
+
+
+.index-book .row{
+    width: 100%;
+    margin: 0;
+}
+
+.index-book-left{
+    background-color: #2f2e2e;
+}
+
+.index-book-right{
+    background-color: #ffda1f;
+}
+.index-book p,.index-book h1{
+    margin: 0;
+}
+
+.index-book h1{
+    padding-top: 183px;
+    color:white;
+    font-size: 96px;
+    font-weight: bolder;
+}
+
+.index-book-right h1{
+    color: #2f2e2e;
+}
+
+.index-book-left,.index-book-right{
+    height: 631px;
 }
