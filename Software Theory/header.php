@@ -26,12 +26,32 @@ PARKTEL
 <div id="add">
     Address:VIT university Chennai<br>
     <span>email: parketel@gmail.com</span>
+    <br>
+    <br>
+    <?php
+      if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'])
+      {
+        echo "Welcome to Parketel, ".$_SESSION['user_name']." !";
+      }    
+    ?>
 </div>
  </div>
 <div id="menu">
-     <a class="item" href="index.html" >Home</a> 
-     <a class="item" href="#" oncl>About us</a> 
-     <a class="item" href="#">Manage Bookings</a>
-      <a class="item" href="login.html">Login</a>
-       <a class="item" href="signup.html">Sign up</a>
+     <a class="item" href="index.php" >Home</a>  
+     <a class="item" href="#" >About us</a>     
+     <a class="item" href="city.php">Book Parking</a>
+     <a class="item" href="managebooking.php">Manage Bookings</a>
+      <a class="item" href="change_pass.php">Change Password</a> 
+    <?php
+      if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'])
+      {
+        echo '<a class="item" href="signout.php">Log out</a>';
+      }
+      else
+      { 
+
+        echo'<a class="item" href="login.php">Login</a>
+          <a class="item" href="signup.php">Sign up</a>';
+     }
+     ?>
 </div>
