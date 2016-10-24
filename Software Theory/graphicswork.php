@@ -1,6 +1,7 @@
 <?php
  session_start();
 include 'header.php';
+include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,20 +70,8 @@ left:220px;
 <center>
 	<p>SELECT SLOT NO.</p>
 <?php
-$host="localhost";
-    $username="root";
-    $password="";
-    $database="parking";
-
-
-     $con=mysqli_connect($host,$username,$password,$database);
-    if(mysqli_connect_errno())
-    {
-        echo"Failed to connect to MySQL ".mysqli_connect_errno();
-    }
-    else
-    {$sql="SELECT slot_id FROM parking_slot where state=0";
-	    $res=mysqli_query($con,$sql);
+$sql="SELECT slot_id FROM parking_slot where state=0";
+	    $res=mysql_query($sql);
 		if(!$res)
 		{
 			echo 'Error';
@@ -90,13 +79,12 @@ $host="localhost";
 		else
 		{
 			echo '<p><select name="slot">';
-			while($row=mysqli_fetch_array($res))
+			while($row=mysql_fetch_array($res))
 			{
 				echo '<option value="'.$row['slot_id'].'">'.$row['slot_id'].'</option>';
 			}
 
 		}
-	}
 
 ?>
 	</select></p>
