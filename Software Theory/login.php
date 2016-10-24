@@ -84,7 +84,7 @@ else
                         $_SESSION['user_name']  = $row['username'];
                     }
                      
-                    echo '<meta http-equiv="refresh" content="0;URL=index.php"';
+                    echo '<meta http-equiv="refresh" content="0;URL=index.php">';
                 }
            }
       }

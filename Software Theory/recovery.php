@@ -24,7 +24,8 @@ $_SESSION['signed_in'] = true;
 $_SESSION['user_name']=$row['username'];
 $_SESSION['cust_id'] = $row['cus_id'];
 }
-                     
+
+if($_POST['action'])                   
 echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="index.php">Proceed to home page</a>.';
 }
 include 'footer.php';

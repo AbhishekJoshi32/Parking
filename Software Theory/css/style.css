@@ -1,6 +1,38 @@
 body, html {
     height: 100%;
 }
+
+@font-face {
+    font-family: headfont;
+    src: url("../fonts/Trend Sans W00 Four.ttf");
+}
+
+/****header *****/
+
+#top{
+    background-image: url(background.jpg);
+    position: relative;
+    width: 100%;
+    height:125px;
+}
+
+#topic{
+    position: absolute;
+    margin-left:261px;
+    margin-top:39px;
+    font-family: headfont, sans-serif;  
+    font-style: italic;
+    font-size: 38px;
+}
+
+/***** navbar *****/
+.navbar{
+    border-radius:0;
+    height:38px;
+}
+
+/***** navbar end *****/
+
 .button1 {
     border: none;
     color: white;
@@ -115,25 +147,9 @@ body, html {
 	margin-bottom: 40px;
 }
 
-#top{
-	background-image: url(background.jpg);
-	position: relative;
-	top: 0;
-	margin: 0px;
-	right: 0;
-	width: 100%;
-	height:163px;
-}
-body{
-	margin: 0px;
-}
-#topic{
-	position: absolute;
-	margin-left:77px;
-	margin-top:39px;
-	font-family: trend-sans-w00-four, sans-serif;
-	font-size: 38px;
-}
+
+
+
 #add{
 	
 	font-size: 15px;
@@ -173,6 +189,3 @@ body{
     padding: 0px 10px 0px 10px;
     text-decoration: none;
 }
-/*.item p{
-	text-align: center;
-}*/

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include 'header.php';
 include 'connect.php';
@@ -10,7 +11,6 @@ if(!$_POST)
 <br><br>
 <br><br>
 <br><br>
-
 <center>
 <form action="signup.php" method="post">
 <table bgcolor="#E0E0E0" cellpadding="7">
@@ -64,10 +64,12 @@ else
 	$user=$_POST['user'];
 	$pass=$_POST['pass'];
 	$repass=$_POST['repass'];
-	if ($pass==$repass) {
+	if ($pass==$repass) 
+	{
 		$sql="INSERT INTO customer_det(first_name,last_name,address,phone,email,username,password) VALUES ('".$_POST['first_name']."','".$_POST['last_name']."','".$_POST['address']."','".$_POST['phone']."','".$_POST['email']."','".$user."','".$pass."')";
 		$result=mysql_query($sql);
-		if(!$result){
+		if(!$result)
+		{
 			echo "INSERT failed: ".mysql_error();
 		}
 
@@ -75,9 +77,8 @@ else
 		{
 	             $_SESSION['signed_in'] = true;
 				 $_SESSION['user_name']  = $user;
-                 echo '<meta http-equiv="refresh" content="0;URL=index.html"';
+                 echo '<meta http-equiv="refresh" content="0;URL=index.php"';
 		}
 	}
 }
-
 ?>

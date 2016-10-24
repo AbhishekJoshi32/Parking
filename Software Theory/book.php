@@ -8,25 +8,25 @@ if(!isset($_SESSION['signed_in']) || !$_SESSION['signed_in'])
 }
 else
 {
-$pid=$_GET['id'];
-$sql="SELECT location from parking_area WHERE p_id='".$pid."'";
-$result=mysql_query($sql);
-if(!$result)
-{
-	echo 'Error in getting location';
-}
-else
-{
-	while($row=mysql_fetch_array($result))
+	$pid=$_GET['id'];
+	$sql="SELECT location from parking_area WHERE p_id='".$pid."'";
+	$result=mysql_query($sql);
+	if(!$result)
 	{
-		echo '<form>
-		Location: <input type="text" name="location" value="'.$row['location'].'" readonly>
-		</form>';
+		echo 'Error in getting location';
 	}
-}
-if(!$_POST)
-{
-	echo '<form method="post" action="">
+	else
+	{
+		while($row=mysql_fetch_array($result))
+		{
+			echo '<form>
+			Location: <input type="text" name="location" value="'.$row['location'].'" readonly>
+			</form>';
+		}
+	}
+	if(!$_POST)
+	{
+		echo '<form method="post" action="">
 		Date: <input type="date" name="date" required><br>
 		Time: <input type="time" name="time" required><br>
 		Duration(in hours): <input type="number" name="duration" required><br>
@@ -37,45 +37,50 @@ if(!$_POST)
 		<option value="4">4</option>
 		</select><br>
 		<input type="Submit" value="Book">';
-}
-else
-{
-	$sql="SELECT vacant_slots FROM parking_area WHERE p_id='".$pid."'";
-	$res=mysql_query($sql);
-	if(!$res)
-	{
-		echo 'Error';
 	}
 	else
 	{
-		while($row=mysql_fetch_array($res))
+		$sql="SELECT vacant_slots FROM parking_area WHERE p_id='".$pid."'";
+		$res=mysql_query($sql);
+		if(!$res)
 		{
-			$rem_slots=$row['vacant_slots']-$_POST['slots'];
-			if($rem_slots>=0)
+			echo 'Error';
+		}
+		else
+		{
+			while($row=mysql_fetch_array($res))
 			{
-				$sql1="UPDATE parking_area SET vacant_slots='".$rem_slots."' WHERE p_id='".$pid."'";
-				$result=mysql_query($sql1);
-				if(!$sql1)
+				$rem_slots=$row['vacant_slots']-$_POST['slots'];
+				if($rem_slots>=0)
 				{
-					echo "Error in updation";
+					$sql1="UPDATE parking_area SET vacant_slots='".$rem_slots."' WHERE p_id='".$pid."'";
+					$result=mysql_query($sql1);
+					if(!$sql1)
+					{
+						echo "Error in updation";
+					}
 				}
+			}
+		}	
+		$cost=20*$_POST['duration']*$_POST['slots'];
+		$query="SELECT cus_id from customer_det where username='".$_SESSION['user_name']."'";
+		$cus=mysql_query($query);
+		while($rows1=mysql_fetch_array($cus))
+		{
+			$sql="INSERT INTO book(cus_id,book_date,book_time,duration,num_slots,cost,p_id) VALUES('".$rows1['cus_id']."',
+		'".$_POST['date']."','".$_POST['time']."','".$_POST['duration']."','".$_POST['slots']."','.$cost.','.$pid.')";
+			$result=mysql_query($sql);
+			if(!$result)
+			{
+				echo "Not inserted booking details";
+			}
+			else
+			{
+				echo "<br>Parking successfully booked<br>";
+				echo "Cost=".$cost;
 			}
 		}
 	}
-	$cost=20*$_POST['duration']*$_POST['slots'];
-	$sql="INSERT INTO book(cus_id,book_date,book_time,duration,num_slots,cost,p_id) VALUES('".$_SESSION['cust_id']."',
-		'".$_POST['date']."','".$_POST['time']."','".$_POST['duration']."','".$_POST['slots']."','.$cost.','.$pid.')";
-	$result=mysql_query($sql);
-	if(!$result)
-	{
-		echo "Not inserted booking details";
-	}
-	else
-	{
-		echo "Parking successfully booked";
-		echo "Cost=".$cost;
-	}
-}
 }
 include 'footer.php';
 ?>
