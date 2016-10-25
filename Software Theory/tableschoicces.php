@@ -1,4 +1,7 @@
-<html>
+<?php
+session_start();
+include 'connect.php';
+echo '<html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -78,72 +81,52 @@
  </table>
  </form>
  </center>
- <center>
-<?php
-//session_start();
+ <center>';
 if(isset($_POST['submit']))
-     {
-       $host="localhost";
-       $username="root";
-       $password="";
-       $database="parking";
-
-       $con=mysqli_connect($host,$username,$password,$database);
-       if(mysqli_connect_errno())
-       {
-          echo"Failed to connect to MySQL ".mysqli_connect_errno();
-       }
-      else
-        {
-          mysqli_select_db($con,$database);
-          $table=$_POST['table'];
-          if ($table=='areas') 
-          {
+{
+    $table=$_POST['table'];
+    if ($table=='areas') 
+    {
           	$sql="SELECT * FROM areas";
-          	$result=mysqli_query($con,$sql);
-          	$row=mysqli_fetch_row($result);
+          	$result=mysql_query($sql);
           	echo"<table bgcolor='#E0E0E0, cellpadding='7'><tr><th>area_id</th><th>area_name</th><th>no_park</th><th>city_id</th></tr>";
-          	while ($row=mysqli_fetch_row($result))
-           {
+          	while ($row=mysql_fetch_array($result))
+            {
           		echo"<tr><td>'$row[0]'</td><td>		'$row[1]'</td>		<td>'$row[2]</td>'		<td>'$row[3]'</td></tr>";
           	}
-          }
-          if ($table=='city') 
-          {
+    }
+    if ($table=='city') 
+    {
           	$sql="SELECT * FROM city";
-          	$result=mysqli_query($con,$sql);
-          	$row=mysqli_fetch_row($result);
+          	$result=mysql_query($sql);
           	echo"<table bgcolor='#E0E0E0, cellpadding='7'><tr><th>city_id</th><th>city_name</th></tr>";
-          	while ($row=mysqli_fetch_row($result))
-           {
+          	while ($row=mysql_fetch_aray($result))
+            {
           		echo"<tr><td>'$row[0]'</td>	<td>'$row[1]'</td></tr>";
           	}
-          }
-          if ($table=='parking_area') 
-          {
+    }
+    if ($table=='parking_area') 
+    {
           	$sql="SELECT * FROM parking_area";
-          	$result=mysqli_query($con,$sql);
-          	$row=mysqli_fetch_row($result);
+          	$result=mysql_query($sql);
           	echo"<table bgcolor='#E0E0E0, cellpadding='7'><tr><th>p_id</th>		<th>manager_id</th>		<th>total_slots</th>		<th>vacant_slots</th>		<th>area_id</th><th>location</th></tr>";
-          	while ($row=mysqli_fetch_row($result))
-           {
+          	while ($row=mysql_fetch_array($result))
+            {
           		echo"<tr><td>'$row[0]'</td>		<td>'$row[1]'</td>		<td>'$row[2]'</td>		<td>'$row[3]'</td>		<td>'$row[4]'</td>		<td>'$row[5]'</td></tr>";
           	}
-          }
-           if ($table=='employee') 
-          {
+    }
+    if ($table=='employee') 
+    {
           	$sql="SELECT * FROM employee";
-          	$result=mysqli_query($con,$sql);
-          	$row=mysqli_fetch_row($result);
+          	$result=mysql_query($con,$sql);
           	echo"<table bgcolor='#E0E0E0, cellpadding='7'><tr><th>emp_id</th>		<th>emp_name</th>		<th>p_id</th>		<th>salary</th></tr>";
-          	while ($row=mysqli_fetch_row($result))
-           {
+          	while ($row=mysql_fetch_array($result))
+            {
           		echo"<tr><td>'$row[0]'</td>		<td>'$row[1]'</td>		<td>'$row[3]'</td>		<td>'$row[4]'</td>";
           	}
-          }
-      }
-     }
-     echo"</table><center>";
-     include 'footer.php';
-     ?>
+    }
+}
+echo"</table><center>";
+include 'footer.php';
+?>
           
