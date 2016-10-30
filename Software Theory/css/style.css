@@ -11,6 +11,12 @@ p{
     padding: 5px 10px ;
 }
 
+hr{
+    border-width: 8px;
+    width: 96px;
+    border-color:#ffda1f;
+}
+
 /****header *****/
 
 #top{
@@ -149,7 +155,7 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.15;
+    opacity: 5;
 }
 
 
@@ -377,7 +383,7 @@ form{
     margin-bottom: 30px;
 }
 
-.row:nth-child(odd){
+.get-park .row:nth-child(odd){
     background-color: #c5c5c5;
 }
 
@@ -411,4 +417,45 @@ form{
 
 .index-book-left,.index-book-right{
     height: 631px;
+}
+
+footer{
+    background-color: #1f1f1f;
+    text-align: center;
+    height: 437px;
+}
+
+footer .head h1{
+    color: #FFDA1F;
+    font-size: 84px;
+    margin-top: 60px;
+}
+footer .head{
+    margin: 30px auto;
+
+}
+footer>.container> p{
+    margin-top: 60px;
+    font-size:22px;
+    color:#CCCCCC;
+}
+footer .col-md-4{
+
+    background-color: #1f1f1f;
+    text-align: left;
+    position: relative;
+}
+
+footer .row{
+    margin-top: 50px;
+}
+
+footer .col-md-4 p{
+    padding-top:0;
+    font-size: 16px;
+    color:#A0A09F;
+    position: absolute;
+    top:0;
+    left: 40px;
+
 }
