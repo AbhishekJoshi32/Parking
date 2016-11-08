@@ -125,43 +125,45 @@ else
 			echo '<center><h1>'.$row['location'].'</h1></center>';
 		}?>
 		<div class="abs">
-<canvas id="1" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[1]==0) echo 'class="green"'; else echo'class="red"'?>" >
-</canvas>
-<canvas id="2" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[2]==0) echo 'class="green"'; else echo'class="red"'; ?>>
-</canvas>
-<canvas id="3" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[3]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-</div>
+      <canvas id="1" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[1]==0) echo 'class="green"'; else echo'class="red"'?>" >
+      </canvas>
+      <canvas id="2" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[2]==0) echo 'class="green"'; else echo'class="red"'; ?>>
+      </canvas>
+      <canvas id="3" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[3]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      </div>
 
 
-<canvas id="4" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[4]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="5" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[5]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="6" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[6]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="7" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[7]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="8" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[8]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas><br>
+      <canvas id="4" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[4]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="5" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[5]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="6" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[6]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="7" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[7]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="8" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[8]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas><br>
 
-<canvas id="9" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[9]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas><br>
-<canvas id="10" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[10]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas><br>
-<canvas id="11" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[11]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="12" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[12]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="13" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[13]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="14" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[14]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
-<canvas id="15" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[15]==0) echo 'class="green"'; else echo'class="red"';?>>
-</canvas>
+      <canvas id="9" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[9]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas><br>
+      <canvas id="10" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[10]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas><br>
+      <canvas id="11" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[11]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="12" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[12]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="13" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[13]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="14" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[14]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
+      <canvas id="15" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[15]==0) echo 'class="green"'; else echo'class="red"';?>>
+      </canvas>
 
 		<?php 
 
+
+		}
 	}
 		echo '
   

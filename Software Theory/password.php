@@ -17,7 +17,7 @@ $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';  
 $mail->SMTPAuth = true;                               
 $mail->Username = 'anushka.bohara2015@vit.ac.in';                 
-$mail->Password = '';                           
+$mail->Password = 'Animesha@123';                           
 $mail->SMTPSecure = 'tls';                            
 $mail->Port = 587;                                    
 
