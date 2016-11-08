@@ -1,8 +1,8 @@
 <?php
 $server = 'localhost';
-$username   = 'Anushka';
-$password   = 'Anushka';
-$database   = 'software';
+$username   = 'root';
+$password   = '';
+$database   = 'parking';
  
 if(!mysql_connect($server, $username,  $password))
 {

@@ -70,21 +70,20 @@ left:220px;
 <center>
 	<p>SELECT SLOT NO.</p>
 <?php
-$sql="SELECT slot_id FROM parking_slot where state=0";
-	    $res=mysql_query($sql);
-		if(!$res)
+	$sql3="SELECT slot_id FROM parking_slot where state=0 and pid=1;";
+    $res3=mysql_query($sql3);
+	if(!$res3)
+	{
+		echo 'Error';
+	}
+	else
+	{
+		echo '<p><select name="slot">';
+		while($row=mysql3_fetch_array($res3))
 		{
-			echo 'Error';
+			echo '<option value="'.$row['slot_id'].'">'.$row['slot_id'].'</option>';
 		}
-		else
-		{
-			echo '<p><select name="slot">';
-			while($row=mysql_fetch_array($res))
-			{
-				echo '<option value="'.$row['slot_id'].'">'.$row['slot_id'].'</option>';
-			}
-
-		}
+	}
 
 ?>
 	</select></p>
@@ -96,5 +95,18 @@ $sql="SELECT slot_id FROM parking_slot where state=0";
 
 
 <?php
-include 'footer.php';
+echo'<footer>
+    <div class="container">
+      <div class="head"><h1>Book your Parking</h1></div>
+    </div>
+    <p>AND SAVE YOUR TIME!</p>
+    <div class="row">
+      <div class="col-md-4">
+         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+         <div class=""></div>
+      </div>
+    </div>    
+  </footer>
+  </body>
+  </html>';
 ?>

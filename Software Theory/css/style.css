@@ -155,7 +155,7 @@ hr{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 5;
+    opacity: 0.5;
 }
 
 
@@ -297,6 +297,7 @@ hr{
     position: absolute;
     top:300px;
     width: 100%;
+    min-height:500px; 
 }
 
 .table{
@@ -330,7 +331,9 @@ form{
     font-weight: bold;
 }
 
-
+.sign-error{
+    height: 50%;
+}
 
 .selectpicker{
     width:500px;
@@ -346,7 +349,7 @@ form{
 
 .head h1{
     font-weight: bold;
-    font-size: 46px;
+    font-size: 96px;
     color: #2800ff;
 }
 
@@ -370,6 +373,9 @@ form{
     margin-bottom: 10px;
 }
 
+
+
+
 .row-head{
     margin-top: 80px;
     font-weight: bold;
@@ -383,11 +389,16 @@ form{
     margin-bottom: 30px;
 }
 
+
+
 .get-park .row:nth-child(odd){
     background-color: #c5c5c5;
 }
 
-
+.get-park .row:nth-child(1){
+    background-color: white;
+    width: 100%;
+}
 .index-book .row{
     width: 100%;
     margin: 0;
@@ -422,7 +433,7 @@ form{
 footer{
     background-color: #1f1f1f;
     text-align: center;
-    height: 437px;
+    min-height: 437px;
 }
 
 footer .head h1{
@@ -448,6 +459,8 @@ footer .col-md-4{
 
 footer .row{
     margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
 }
 
 footer .col-md-4 p{
@@ -457,5 +470,26 @@ footer .col-md-4 p{
     position: absolute;
     top:0;
     left: 40px;
+}
 
+footer p{
+    font-size: 24px;
+    color: #CCCCCC;
+}
+
+footer span{
+    color: #A0A09F;
+    font-size: 20px;
+}
+
+.abs{
+position:absolute;
+top:400px;
+left:320px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
 }
