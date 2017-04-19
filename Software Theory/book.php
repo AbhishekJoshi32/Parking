@@ -131,7 +131,7 @@ else
       </canvas>
       <canvas id="3" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[3]==0) echo 'class="green"'; else echo'class="red"';?>>
       </canvas>
-      </div>
+    </div>
 
 
       <canvas id="4" width="100" height="100" style="border:1px solid #000000;" <?php if ($res_arr[4]==0) echo 'class="green"'; else echo'class="red"';?>>
@@ -271,7 +271,7 @@ else
 </script>
   </body>
   </html>';
-}
+
 ?>
 
 <!--
